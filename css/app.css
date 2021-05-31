@@ -1,0 +1,103 @@
+/* Creado por Abel Acosta */
+:root {
+  --blanco: hsl(0, 0%, 95%);
+  --oscuro: #212121;
+  --naranja: hsl(31, 77%, 52%);
+  --cyan: hsl(184, 100%, 22%);
+  --cyanOscuro: hsl(179, 100%, 13%);
+  --blancoParrafos: hsla(0, 0%, 100%, 0.75);
+  --fuenteLexend: "Lexend Deca", sans-serif;
+  --fuenteBigShoulders: "Big Shoulders Display", cursive;
+}
+html {
+  box-sizing: border-box;
+}
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+body {
+  font-size: 15px;
+  font-family: var(--fuenteBigShoulders);
+  background-color: var(--blanco);
+}
+.contenedor {
+  margin: 25vh auto;
+  max-width: 800px;
+  padding: 10px;
+}
+.columnas {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.columna {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 25px;
+}
+
+.columna:nth-child(1) {
+  background-color: var(--naranja);
+  color: var(--naranja);
+  border-radius: 20px 0 0 20px;
+}
+.columna:nth-child(2) {
+  background-color: var(--cyan);
+  color: var(--cyan);
+}
+.columna:nth-child(3) {
+  background-color: var(--cyanOscuro);
+  color: var(--cyanOscuro);
+  border-radius: 0 20px 20px 0;
+}
+.columna h1 {
+  font-family: var(--fuenteBigShoulders);
+  text-transform: uppercase;
+  color: var(--blanco);
+}
+.columna p {
+  color: var(--blancoParrafos);
+  font-family: var(--fuenteLexend);
+  font-weight: 400;
+}
+.columna img {
+  width: 40%;
+}
+.btn {
+  margin-top: 40px;
+  background-color: var(--blanco);
+  outline: none;
+  border: 2px solid #fff;
+  text-align: center;
+  width: fit-content;
+  padding: 20px;
+  border-radius: 40px;
+  text-decoration: none;
+  color: inherit;
+  font-family: var(--fuenteLexend);
+}
+.btn:active {
+  background-color: inherit;
+  border: 2px solid #fff;
+  color: var(--blanco);
+}
+
+/* Celualers */
+@media (max-width: 375px) {
+  /* .contenedor {
+    margin: 0 auto;
+  } */
+  .columnas {
+    grid-template-columns: 1fr;
+  }
+  .columna:nth-child(1) {
+    border-radius: 20px 20px 0 0;
+  }
+  .columna:nth-child(3) {
+    border-radius: 0 0 20px 20px;
+  }
+}
